@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %} {{ film["name"] }} {% endblock %}
+
+{% block content %}
+<div class="row mb-5">
+    <div class="col-md-4">
+        <img src="{{ film['poster_url'] }}" class="img-fluid rounded" alt="Постер" style="max-width: 100%; height: auto;">
+    </div>
+    <div class="col-md-8 p-5">
+        <h1 class="mt-4 mb-5">{{ film["name"] }}</h1>
+        <p><strong>Рейтинг: </strong>{{ film["rating"] }}</p>
+        <p><strong>Год выпуска: </strong>{{ film["year"] }}</p>
+        <p><strong>Жанры: </strong>{{ film["genres"] }}</p>
+        <p><strong>Страна: </strong>{{ film["country"] }}</p>
+        <p><strong>Продолжительность: </strong>{{ film["movieLength"] }}</p>
+        <p><strong>Возрастной рейтинг: </strong>{{ film["ageRating"] }}</p>
+        <p><strong>Описание: </strong>{{ film["description"] }}</p>
+    </div>
+</div>
+    <h3 class="mb-3">Трейлер:</h3>
+
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="ratio ratio-16x9">
+            <iframe src="{{ film['trailer_url'] }}" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+{% endblock %}
